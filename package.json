@@ -1,0 +1,51 @@
+{
+  "name": "graphql-errors",
+  "version": "1.0.0",
+  "description": "Better error handling for GraphQL",
+  "main": "./dist/",
+  "options": {
+    "mocha": "--require scripts/mocha_runner lib/**/__tests__/**/*.js"
+  },
+  "scripts": {
+    "prepublish": ". ./scripts/prepublish.sh",
+    "lint": "eslint ./lib",
+    "lintfix": "eslint ./lib --fix",
+    "testonly": "mocha $npm_package_options_mocha",
+    "test": "npm run lint && npm run testonly"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadirahq/graphql-errors.git"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "Kadira Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kadirahq/graphql-errors/issues"
+  },
+  "homepage": "https://github.com/kadirahq/graphql-errors#readme",
+  "devDependencies": {
+    "babel-cli": "6.x.x",
+    "babel-core": "6.x.x",
+    "babel-eslint": "4.x.x",
+    "babel-plugin-transform-runtime": "6.x.x",
+    "babel-polyfill": "6.x.x",
+    "babel-preset-es2015": "6.x.x",
+    "babel-preset-stage-2": "6.x.x",
+    "chai": "3.x.x",
+    "eslint": "1.7.x",
+    "eslint-plugin-babel": "2.x.x",
+    "graphql": "0.4.x",
+    "logtrap": "0.0.1",
+    "mocha": "2.x.x",
+    "nodemon": "1.7.x"
+  },
+  "dependencies": {
+    "babel-runtime": "6.x.x"
+  },
+  "peerDependencies": {
+    "graphql": "0.4.x"
+  }
+}
