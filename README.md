@@ -6,7 +6,7 @@ When an error occurs when processing GraphQL queries, [graphql-js](https://githu
 var express = require('express');
 var graphql = require('graphql');
 var graphqlHTTP = require('express-graphql');
-var GraphQLError = require('graphql-errors').GraphQLError;
+var UserError = require('graphql-errors').UserError;
 var processSchema = require('graphql-errors').processSchema;
 
 var schema = new graphql.GraphQLSchema({
@@ -22,7 +22,7 @@ var schema = new graphql.GraphQLSchema({
       test2: {
         type: graphql.GraphQLString,
         resolve() {
-          throw new GraphQLError('custom error message');
+          throw new UserError('custom error message');
         },
       },
     },
