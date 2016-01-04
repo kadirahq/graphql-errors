@@ -6,23 +6,16 @@ When an error occurs when processing GraphQL queries, [graphql-js](https://githu
 var express = require('express');
 var graphql = require('graphql');
 var graphqlHTTP = require('express-graphql');
-var UserError = require('graphql-errors').UserError;
-var processSchema = require('graphql-errors').processSchema;
+var maskErrors = require('graphql-errors').maskErrors;
 
 var schema = new graphql.GraphQLSchema({
   query: new graphql.GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-      test1: {
+      test: {
         type: graphql.GraphQLString,
         resolve() {
           throw new Error('secret error message');
-        },
-      },
-      test2: {
-        type: graphql.GraphQLString,
-        resolve() {
-          throw new UserError('custom error message');
         },
       },
     },
@@ -30,7 +23,7 @@ var schema = new graphql.GraphQLSchema({
 });
 
 // mask error messages
-processSchema(schema);
+maskErrors(schema);
 
 var app = express();
 app.use('/', graphqlHTTP({schema: schema}));
