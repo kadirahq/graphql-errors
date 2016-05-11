@@ -43,7 +43,8 @@
     "nodemon": "^1.9.2"
   },
   "dependencies": {
-    "babel-runtime": "^6.6.1"
+    "babel-runtime": "^6.6.1",
+    "uuid": "^2.0.2"
   },
   "peerDependencies": {
     "graphql": ">0.4.0"
