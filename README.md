@@ -67,7 +67,7 @@ Let's say your database throws an error because you exceeded some limit. Normall
 
 As you can see, no sensitive information is leaked to the user at all. You might think this'll make bug reports less useful, but note how a UUID is attached to the error message!
 
-**What you see in the server console*
+**What you see in the server console**
 
 ```
 Error: Database limit exceeded.: e553aaa4-47dc-47db-9bfc-314cc2cf5833
