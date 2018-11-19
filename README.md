@@ -4,6 +4,12 @@ When an error occurs when processing GraphQL queries, [graphql-js](https://githu
 
 The `graphql-errors` module fixes this issue by **masking error messages sent to the client**. This module intercepts GraphQL error messages and replaces them with `"Internal error"` and a UUID. It also logs the error on the server with the stacktrace and it's UUID, making user bug reports easy to cross-reference.
 
+## Installation
+
+```
+npm i --save graphql-errors
+```
+
 ## Usage
 
 ``` javascript
